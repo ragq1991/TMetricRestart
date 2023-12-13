@@ -68,7 +68,8 @@ def find_error():
 
 
 def clearLogs():
-    folder_to_delete = "C:\\Users\\Ragq\\AppData\\Roaming\\Devart\\TMetric Desktop"
+    username = os.getlogin()
+    folder_to_delete = f"C:\\Users\\{username}\\AppData\\Roaming\\Devart\\TMetric Desktop"
 
     try:
         # Получаем список файлов в папке
