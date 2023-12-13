@@ -17,6 +17,7 @@ def start():
             if window.title == "TMetric Desktop":
                 print("Запущенный TMetric найден")
                 tm_started = True
+                clearLogs()
                 break
         if not tm_started:
             print("Пробую запустить...")
@@ -91,7 +92,6 @@ def clearLogs():
 def main():
     while True:
         try:
-            clearLogs()
             start()
             find_error()
         except Exception as e:
