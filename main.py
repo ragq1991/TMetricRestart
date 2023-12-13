@@ -67,9 +67,30 @@ def find_error():
             return
 
 
+def clearLogs():
+    folder_to_delete = "C:\\Users\\Ragq\\AppData\\Roaming\\Devart\\TMetric Desktop"
+
+    try:
+        # Получаем список файлов в папке
+        files = os.listdir(folder_to_delete)
+
+        # Перебираем файлы и удаляем их
+        for file_name in files:
+            file_path = os.path.join(folder_to_delete, file_name)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+                print(f"Файл {file_name} удален.")
+
+        print("Все файлы в папке успешно удалены.")
+
+    except Exception as e:
+        print(f"Произошла ошибка: {e}")
+
+
 def main():
     while True:
         try:
+            clearLogs()
             start()
             find_error()
         except Exception as e:
